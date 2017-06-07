@@ -56,7 +56,9 @@ final class AppInfoView: NSView {
         let string = "\(application.bundleID)\n" +
             "Version: \(application.bundleVersion) (\(application.bundleShortVersion))\n" +
             "Size: \(sizeDescription)"
-        textField.stringValue = string
+        DispatchQueue.main.async {
+            self.textField.stringValue = string
+        }
     }
     
 }
